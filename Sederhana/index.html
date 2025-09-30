@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kalender 2024-2026</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-3xl bg-white shadow-lg rounded-2xl p-4 sm:p-6">
+    <!-- Header kontrol -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+      <div class="flex items-center gap-2">
+        <button id="tombolSebelumnya" class="px-3 py-2 rounded-md border hover:bg-gray-100 active:scale-95" aria-label="Bulan sebelumnya">‹</button>
+        <div class="text-xl sm:text-2xl font-semibold" id="teksJudulBulan">Januari 2024</div>
+        <button id="tombolBerikutnya" class="px-3 py-2 rounded-md border hover:bg-gray-100 active:scale-95" aria-label="Bulan berikutnya">›</button>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <label for="pilihBulan" class="sr-only">Bulan</label>
+        <select id="pilihBulan" class="border rounded-md px-3 py-2">
+          <option value="0">Januari</option>
+          <option value="1">Februari</option>
+          <option value="2">Maret</option>
+          <option value="3">April</option>
+          <option value="4">Mei</option>
+          <option value="5">Juni</option>
+          <option value="6">Juli</option>
+          <option value="7">Agustus</option>
+          <option value="8">September</option>
+          <option value="9">Oktober</option>
+          <option value="10">November</option>
+          <option value="11">Desember</option>
+        </select>
+
+        <label for="pilihTahun" class="sr-only">Tahun</label>
+        <select id="pilihTahun" class="border rounded-md px-3 py-2"></select>
+      </div>
+    </div>
+
+    <!-- Grid hari -->
+    <div class="grid grid-cols-7 text-center text-sm font-medium text-gray-600">
+      <div class="py-2">Sen</div>
+      <div class="py-2">Sel</div>
+      <div class="py-2">Rab</div>
+      <div class="py-2">Kam</div>
+      <div class="py-2">Jum</div>
+      <div class="py-2 text-blue-600">Sab</div>
+      <div class="py-2 text-red-600">Min</div>
+    </div>
+
+    <!-- Kontainer tanggal -->
+    <div id="kontainerTanggal" class="grid grid-cols-7 gap-1 sm:gap-2 mt-1 sm:mt-2"></div>
+
+    <!-- Keterangan kecil -->
+    <p class="mt-4 text-xs text-gray-500">
+      Catatan. Pekan dimulai hari Senin. Rentang kalender 2024 sampai 2026.
+    </p>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
