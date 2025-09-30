@@ -143,13 +143,14 @@ function renderKalender(){
     const iso = `${y}-${m}-${d}`;
 
     const div = document.createElement("button");
-    div.className = "kotak-tanggal flex flex-col items-start justify-start p-2 rounded-xl bg-white shadow hover:bg-slate-50 text-left";
+    div.className = "kotak-tanggal bg-white shadow text-center relative";
+
     if(!dalamBulan) div.classList.add("bg-slate-100","text-slate-400");
     if(iso === tanggalDipilih) div.classList.add("ring-2","ring-indigo-300","bg-indigo-50");
 
     const label = document.createElement("div");
     label.textContent = tanggal.getDate();
-    label.className = "text-sm font-semibold";
+    label.className = "font-bold";
 
     const labelLibur = petaLiburTahun[iso];
     const badge = document.createElement("div");
@@ -162,7 +163,7 @@ function renderKalender(){
     const adaAgenda = ambilAgenda(iso).length > 0;
     const titik = document.createElement("div");
     if(adaAgenda){
-      titik.className = "mt-1 w-2 h-2 rounded-full bg-emerald-500";
+      titik.className = "w-4 h-2 rounded-full bg-emerald-500 absolute left-5 bottom-12";
     }
 
     div.appendChild(label);
