@@ -88,8 +88,7 @@ function renderKalender() {
     tombolTanggal.className =
       "aspect-square w-full rounded-xl border text-sm sm:text-base " +
       "hover:bg-gray-100 active:scale-95 transition " +
-      (adalahHariIni
-        ? "border-indigo-500 ring-2 ring-indigo-200 font-semibold"
+      (adalahHariIni ? "border-indigo-500 ring-2 ring-indigo-200 font-semibold"
         : "border-gray-200");
 
     tombolTanggal.setAttribute("aria-label", `Tanggal ${d} ${namaBulan[bulanDipilih]} ${tahunDipilih}`);
